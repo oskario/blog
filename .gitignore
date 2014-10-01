@@ -10,3 +10,4 @@ dist
 .gitattributes
 .editorconfig
 .yo-rc.json
+coverage

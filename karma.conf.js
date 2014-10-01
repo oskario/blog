@@ -17,12 +17,10 @@ module.exports = function(config) {
       'client/bower_components/angular-resource/angular-resource.js',
       'client/bower_components/angular-cookies/angular-cookies.js',
       'client/bower_components/angular-sanitize/angular-sanitize.js',
-      'client/bower_components/angular-route/angular-route.js',
       'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'client/bower_components/lodash/dist/lodash.compat.js',
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'client/app/app.js',
-      'client/app/app.coffee',
       'client/app/**/*.js',
       'client/app/**/*.coffee',
       'client/components/**/*.js',
@@ -37,6 +35,7 @@ module.exports = function(config) {
       '**/*.jade': 'ng-jade2js',
       '**/*.html': 'html2js',
       '**/*.coffee': 'coffee',
+      'client/app/**/*.js': 'coverage'
     },
 
     ngHtml2JsPreprocessor: {
@@ -57,10 +56,8 @@ module.exports = function(config) {
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     logLevel: config.LOG_INFO,
 
-
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
-
 
     // Start these browsers, currently available:
     // - Chrome
@@ -75,6 +72,14 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: false,
+
+    // code coverage reports
+    reporters: ['progress', 'coverage'],
+
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    }
   });
 };

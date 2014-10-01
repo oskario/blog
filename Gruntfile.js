@@ -404,10 +404,10 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'sass',
+        'sass'
       ],
       test: [
-        'sass',
+        'sass'
       ],
       debug: {
         tasks: [
@@ -541,7 +541,7 @@ module.exports = function (grunt) {
           ]
         }
       }
-    },
+    }
   });
 
   // Used for delaying livereload until after server has restarted
@@ -578,7 +578,7 @@ module.exports = function (grunt) {
       ]);
     }
 
-    grunt.task.run([
+    return grunt.task.run([
       'clean:server',
       'env:all',
       'injector:sass', 
@@ -598,7 +598,7 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
-  grunt.registerTask('test', function(target) {
+  grunt.registerTask('test', function (target) {
     if (target === 'server') {
       return grunt.task.run([
         'env:all',
@@ -634,7 +634,7 @@ module.exports = function (grunt) {
       ]);
     }
 
-    else grunt.task.run([
+    else return grunt.task.run([
       'test:server',
       'test:client'
     ]);
