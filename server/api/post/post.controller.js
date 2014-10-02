@@ -35,6 +35,10 @@ exports.findById = function (req, res) {
  * Responses with newly created post if operation suceeds.
  */
 exports.create = function (req, res) {
+    var data = req.body;
+
+    createPermalink(data);
+
     Post.create(req.body, function (err, post) {
         if (err) {
             return handleError(res, err);
@@ -42,6 +46,13 @@ exports.create = function (req, res) {
         return res.json(201, post);
     });
 };
+
+function createPermalink(post) {
+    if (!post.permalink) {
+        post.permalink = post.title.substring(0,5);
+    }
+    return post;
+}
 //
 //// Updates an existing thing in the DB.
 //exports.update = function (req, res) {

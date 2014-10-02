@@ -9,6 +9,7 @@ var PostSchema = new Schema({
     author: String,
     tags: [String],
     date: { type: Date, default: Date.now },
+    permalink: String,
     body: String
 });
 
