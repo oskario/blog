@@ -12,6 +12,11 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        dirs: {
+            dist: 'dist',
+            temp: '.tmp',
+            public: 'public'
+        },
         watch: {
             options: {
                 nospawn: true,
@@ -21,9 +26,10 @@ module.exports = function (grunt) {
                 files: [
                     'app.js',
                     'app/**/*.js',
-                    'config/*.js'
+                    'config/*.js',
+                    '<%= dirs.public %>/js/*.js'
                 ],
-                tasks: ['develop']
+                tasks: ['server']
             },
             views: {
                 files: [
@@ -34,7 +40,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: [
-                    'public/css/**/*.{scss,sass}'],
+                    '<%= dirs.public %>/css/**/*.{scss,sass}'],
                 tasks: ['sass', 'autoprefixer']
             },
             express: {
@@ -44,26 +50,53 @@ module.exports = function (grunt) {
                 tasks: ['express:dev', 'wait'],
                 options: {
                     livereload: true,
-                    nospawn: true //Without this option specified express won't be reloaded
+                    nospawn: true
                 }
             }
         },
         clean: {
-            all: '.tmp/**/*.*'
+            all: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '<%= dirs.temp %>',
+                        '<%= dirs.dist %>'
+                    ]
+                }]
+            },
+            server: '.tmp/**/*.*'
+        },
+        copy: {
+            dist: {
+                files: [
+                    { src: ['app/**'], dest: '<%= dirs.dist %>/' },
+                    { src: ['config/**'], dest: '<%= dirs.dist %>/' },
+                    { expand: true, src: ['<%= dirs.public %>/', '!*.scss'], dest: '<%= dirs.dist %>'},
+                    { src: 'app.js', dest: '<%= dirs.dist %>/app.js' }
+                ]
+            }
         },
         sass: {
             server: {
                 options: {
                     loadPath: [
-                        'public'
+                        '<%= dirs.public %>'
                     ],
                     compass: false
                 },
                 files: [{
                     expand: true,
-                    cwd: 'public/css',
+                    cwd: '<%= dirs.public %>/css',
                     src: ['*.scss'],
-                    dest: '.tmp/css',
+                    dest: '<%= dirs.temp %>/css',
+                    ext: '.css'
+                }]
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    src: ['<%= dirs.public %>/css/**/*.scss'],
+                    dest: '<%= dirs.dist %>',
                     ext: '.css'
                 }]
             }
@@ -79,7 +112,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         src: 'app/views/layout.jade',
-                        dest: '.tmp/views/layout.jade'
+                        dest: '<%= dirs.dist %>/views/layout.jade'
                     }
                 ]
             }
@@ -92,9 +125,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: '.tmp/',
+                        cwd: '<%= dirs.dist %>/',
                         src: '{,*/}*.css',
-                        dest: '.tmp/'
+                        dest: '<%= dirs.dist %>/'
                     }
                 ]
             }
@@ -116,8 +149,16 @@ module.exports = function (grunt) {
             },
             prod: {
                 options: {
-                    script: 'dist/app.js'
+                    script: '<%= dirs.dist %>/app.js'
                 }
+            }
+        },
+        wiredep: {
+            target: {
+                src: [
+                    '<%= dirs.dist %>/**/*.jade'
+//                    '<%= dirs.public %>/css/**/*.scss'
+                ]
             }
         }
     });
@@ -128,20 +169,39 @@ module.exports = function (grunt) {
 
     grunt.registerTask('serve', function (target) {
         if (target == 'dist') {
-            return grunt.task.run(['develop', 'watch']);
+            return grunt.task.run([
+                'build',
+                'express:prod',
+                'wait',
+                'open',
+                'watch'
+            ]);
         } else {
             return grunt.task.run([
-                'clean:all',
+                'clean:server',
                 'sass',
+                'wiredep',
                 'autoprefixer',
                 'express:dev',
-//                'jadeUsemin',
                 'wait',
                 'open',
                 'watch'
             ]);
         }
     });
+
+    grunt.registerTask('build', function () {
+        return grunt.task.run([
+            'clean:all',
+            'copy:dist',
+            'sass:dist',
+            'wiredep',
+            'autoprefixer',
+            'jadeUsemin'
+        ]);
+    });
+
+
     grunt.registerTask('wait', function () {
         grunt.log.ok('Waiting for server reload...');
 
