@@ -8,19 +8,10 @@ var config = {
         app: {
             name: 'blog'
         },
-        port: 3000,
-        db: 'mongodb://localhost/blog-development'
-
-    },
-
-    test: {
-        root: rootPath,
-        app: {
-            name: 'blog'
-        },
-        port: 3000,
-        db: 'mongodb://localhost/blog-development'
-
+        ip: 'localhost',
+        port: 9000,
+        db: 'mongodb://localhost/blog',
+        debug: true
     },
 
     production: {
@@ -28,9 +19,9 @@ var config = {
         app: {
             name: 'blog'
         },
-        port: 3000,
+        ip: 'localhost',
+        port: 9000,
         db: 'mongodb://localhost/blog'
-
     }
 };
 

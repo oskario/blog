@@ -12,11 +12,6 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        develop: {
-            server: {
-                file: 'app.js'
-            }
-        },
         watch: {
             options: {
                 nospawn: true,
@@ -42,12 +37,19 @@ module.exports = function (grunt) {
                     'public/css/**/*.{scss,sass}'],
                 tasks: ['sass', 'autoprefixer']
             },
-            injectSass: {
+            express: {
                 files: [
-                    'public/css/**/*.{scss,sass}'
+                    'app/**/*.{js,json}'
                 ],
-                tasks: ['injector:sass']
+                tasks: ['express:dev', 'wait'],
+                options: {
+                    livereload: true,
+                    nospawn: true //Without this option specified express won't be reloaded
+                }
             }
+        },
+        clean: {
+            all: '.tmp/**/*.*'
         },
         sass: {
             server: {
@@ -57,8 +59,64 @@ module.exports = function (grunt) {
                     ],
                     compass: false
                 },
-                files: {
-                    '.tmp/css/app.css' : 'public/css/app.scss'
+                files: [{
+                    expand: true,
+                    cwd: 'public/css',
+                    src: ['*.scss'],
+                    dest: '.tmp/css',
+                    ext: '.css'
+                }]
+            }
+        },
+        jadeUsemin: {
+            scripts: {
+                options: {
+                    tasks: {
+                        js: ['concat', 'uglify'],
+                        css: ['concat', 'cssmin']
+                    }
+                },
+                files: [
+                    {
+                        src: 'app/views/layout.jade',
+                        dest: '.tmp/views/layout.jade'
+                    }
+                ]
+            }
+        },
+        autoprefixer: {
+            options: {
+                browsers: ['last 1 version']
+            },
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '.tmp/',
+                        src: '{,*/}*.css',
+                        dest: '.tmp/'
+                    }
+                ]
+            }
+        },
+        open: {
+            server: {
+                url: 'http://localhost:<%= express.options.port %>'
+            }
+        },
+        express: {
+            options: {
+                port: process.env.PORT || 9000
+            },
+            dev: {
+                options: {
+                    script: 'app.js',
+                    debug: true
+                }
+            },
+            prod: {
+                options: {
+                    script: 'dist/app.js'
                 }
             }
         }
@@ -68,25 +126,35 @@ module.exports = function (grunt) {
     files = grunt.config('watch.js.files');
     files = grunt.file.expand(files);
 
-//    grunt.registerTask('delayed-livereload', 'Live reload after the node server has restarted.', function () {
-//        var done = this.async();
-//        setTimeout(function () {
-//            request.get('http://localhost:' + reloadPort + '/changed?files=' + files.join(','), function (err, res) {
-//                var reloaded = !err && res.statusCode === 200;
-//                if (reloaded)
-//                    grunt.log.ok('Delayed live reload successful.');
-//                else
-//                    grunt.log.error('Unable to make a delayed live reload.');
-//                done(reloaded);
-//            });
-//        }, 500);
-//    });
-
     grunt.registerTask('serve', function (target) {
         if (target == 'dist') {
             return grunt.task.run(['develop', 'watch']);
         } else {
-            return grunt.task.run(['develop', 'sass', 'watch']);
+            return grunt.task.run([
+                'clean:all',
+                'sass',
+                'autoprefixer',
+                'express:dev',
+//                'jadeUsemin',
+                'wait',
+                'open',
+                'watch'
+            ]);
         }
+    });
+    grunt.registerTask('wait', function () {
+        grunt.log.ok('Waiting for server reload...');
+
+        var done = this.async();
+
+        setTimeout(function () {
+            grunt.log.writeln('Done waiting!');
+            done();
+        }, 1500);
+    });
+
+
+    grunt.registerTask('express-keepalive', 'Keep grunt running', function () {
+        this.async();
     });
 };
