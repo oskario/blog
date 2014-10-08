@@ -111,8 +111,9 @@ module.exports = function (grunt) {
                 },
                 files: [
                     {
-                        src: 'app/views/layout.jade',
-                        dest: '<%= dirs.dist %>/views/layout.jade'
+                        src: '<%= dirs.dist %>/app/views/layout.jade'
+//                        src: 'app/views/layout.jade',
+//                        dest: '<%= dirs.dist %>/views/layout.jade'
                     }
                 ]
             }
@@ -156,8 +157,8 @@ module.exports = function (grunt) {
         wiredep: {
             target: {
                 src: [
+                    'app/**/*.jade',
                     '<%= dirs.dist %>/**/*.jade'
-//                    '<%= dirs.public %>/css/**/*.scss'
                 ]
             }
         }

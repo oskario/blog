@@ -6,8 +6,8 @@ html(lang='en')
         title= title
         block css
             //-<!-- build:css public/css/styles.min.css -->
-            link(rel='stylesheet', href='css/app.css')
-            link(rel='stylesheet', href='css/fonts.css')
+            link(rel='stylesheet', href='/css/app.css')
+            link(rel='stylesheet', href='/css/fonts.css')
             //-<!-- endbuild -->
         block js
             //-<!-- build:js public/js/scripts.min.js -->
@@ -17,6 +17,7 @@ html(lang='en')
         block content
 
         //-<!-- build:js public/js/scripts.min.js -->
-            //-<!-- bower:js -->
-            //-<!-- endbower -->
+            //bower:
+            script(src='../../public/components/jquery/dist/jquery.js')
+            //endbower
         //-<!-- endbuild -->
