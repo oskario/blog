@@ -20,6 +20,17 @@ module.exports = function (app, config) {
     }));
     app.use(cookieParser());
     app.use(compress());
+
+    app.use(function (req, res, next) {
+        // Get rid of '/public'
+        var publicDir = '/public';
+        if (req.url.length > publicDir.length &&
+            req.url.substr(0, publicDir.length) === publicDir) {
+            req.url = req.url.substr(publicDir.length);
+        }
+        next();
+    });
+
     app.use(express.static(config.root + '/public'));
 
     if (config.debug) {
