@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                     'config/*.js',
                     '<%= dirs.public %>/js/*.js'
                 ],
-                tasks: ['server']
+                tasks: ['serve']
             },
             views: {
                 files: [
@@ -72,7 +72,9 @@ module.exports = function (grunt) {
                     { src: ['app/**'], dest: '<%= dirs.dist %>/' },
                     { src: ['config/**'], dest: '<%= dirs.dist %>/' },
                     { expand: true, src: ['<%= dirs.public %>/', '!*.scss'], dest: '<%= dirs.dist %>'},
-                    { src: 'app.js', dest: '<%= dirs.dist %>/app.js' }
+                    { src: 'app.js', dest: '<%= dirs.dist %>/app.js' },
+                    { src: '<%= dirs.components =>/jquery/', dest: '<%= dirs.dist %>/app.js' },
+                    { src: 'package.json', dest: '<%= dirs.dist %>/' }
                 ]
             }
         },
@@ -182,7 +184,6 @@ module.exports = function (grunt) {
                 'clean:server',
                 'sass',
                 'wiredep',
-                'autoprefixer',
                 'express:dev',
                 'wait',
                 'open',
@@ -198,7 +199,7 @@ module.exports = function (grunt) {
             'sass:dist',
             'wiredep',
             'autoprefixer',
-            'jadeUsemin'
+//            'jadeUsemin'
         ]);
     });
 

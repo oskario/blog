@@ -2,9 +2,13 @@ doctype html
 html(lang='en')
     head
         meta(charset='UTF-8')
-        meta(name='viewport', content='width=device-width')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='author', content='Oskar Dylewski')
         title= title
         block css
+            link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css')
+            link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css')
+
             //-<!-- build:css public/css/styles.min.css -->
             link(rel='stylesheet', href='/css/app.css')
             link(rel='stylesheet', href='/css/fonts.css')
@@ -16,8 +20,11 @@ html(lang='en')
     body
         block content
 
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+        script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js')
         //-<!-- build:js public/js/scripts.min.js -->
-            //bower:
-            script(src='../../public/components/jquery/dist/jquery.js')
-            //endbower
+        //bower:
+        script(src='../../public/components/jquery/dist/jquery.js')
+        script(src='../../public/components/bootstrap/dist/js/bootstrap.js')
+        //endbower
         //-<!-- endbuild -->
