@@ -42,6 +42,7 @@ body {
     position: relative;
 
     .title {
+      margin-right: 60px;
       h2 {
         color: #000;
         font-weight: 500;
@@ -54,6 +55,10 @@ body {
       right: 0;
       color: #888;
       font-size: 1.6em;
+
+      i {
+        margin-left: 10px;
+      }
     }
 
     .date {
