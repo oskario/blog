@@ -8,7 +8,6 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-
     Post.find(function (err, articles) {
         if (err) return next(err);
         res.render('index', {
