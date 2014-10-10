@@ -124,13 +124,23 @@ module.exports = function (grunt) {
             options: {
                 browsers: ['last 1 version']
             },
-            dist: {
+            prod: {
                 files: [
                     {
                         expand: true,
                         cwd: '<%= dirs.dist %>/',
                         src: '{,*/}*.css',
                         dest: '<%= dirs.dist %>/'
+                    }
+                ]
+            },
+            dev: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.temp %>/',
+                        src: '{,*/}*.css',
+                        dest: '<%= dirs.temp %>/'
                     }
                 ]
             }
@@ -184,6 +194,7 @@ module.exports = function (grunt) {
                 'clean:server',
                 'sass',
                 'wiredep',
+                'autoprefixer:dev',
                 'express:dev',
                 'wait',
                 'open',
@@ -198,7 +209,7 @@ module.exports = function (grunt) {
             'copy:dist',
             'sass:dist',
             'wiredep',
-            'autoprefixer',
+            'autoprefixer:prod',
 //            'jadeUsemin'
         ]);
     });

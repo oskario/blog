@@ -1,13 +1,69 @@
 extends layout
 
 block content
-    .container
-        //
-           Main component for a primary marketing message or call to action
-        .jumbotron
-            h1 Navbar example
-            p
-                | This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.
-            p To see the difference between static and fixed top navbars, just scroll.
-            p
-                a.btn.btn-lg.btn-primary(href='http://getbootstrap.com/components/#navbar') View navbar docs »
+    .header.card
+        h2 Featured posts
+        .divider
+        h2 Latest posts
+
+    .card
+        .top
+            h2 Some example article
+            .date
+                p 2014-10-13
+        //img(src='http://lorempixel.com/640/300/abstract')
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+        //.divider
+        .bottom
+            .btn READ MORE
+
+    .card
+        img(src='http://lorempixel.com/640/300/abstract')
+        .top
+            h2 Another example article
+            .date
+                p 2014-10-08
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+        .bottom
+            .btn READ MORE
+
+    .card
+        .top
+            h2 Breaking news!
+            .date
+                p 2014-10-02
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+        //.divider
+        .bottom
+            .btn READ MORE
+
+    .card
+        img(src='http://lorempixel.com/640/299/abstract')
+        .top
+            h2 Just a casual story
+            .date
+                p 2014-09-25
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+        .bottom
+            .btn READ MORE
+
+    .card
+        img(src='http://lorempixel.com/640/301/abstract')
+        .top
+            h2 Nothing really important
+            .date
+                p 2014-09-20
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+        .bottom
+            .btn READ MORE
+
+
+
+
+    //.jumbotron
+    //    h1 Navbar example
+    //    p
+    //        | This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.
+    //    p To see the difference between static and fixed top navbars, just scroll.
+    //    p
+    //        a.btn.btn-lg.btn-primary(href='http://getbootstrap.com/components/#navbar') View navbar docs »
