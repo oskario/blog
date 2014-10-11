@@ -1,7 +1,6 @@
 $color-main: #009688;
 
 body {
-  min-height: 2000px;
   background-color: #f3f3f3;
 }
 
@@ -38,8 +37,6 @@ body {
   overflow: hidden;
   background-color: #fff;
   margin-bottom: 20px;
-  //  padding-left: 20px;
-  //  padding-right: 20px;
   padding: 0;
 
   &>* {
@@ -90,6 +87,11 @@ body {
     border-top: 1px solid rgba(85, 85, 85, 0.3);
     color: #888;
     padding-top: 5px;
+    padding-bottom: 5px;
+
+    a {
+      color: #888;
+    }
   }
 }
 
@@ -125,6 +127,14 @@ body {
     }
 
   }
+}
+
+.info {
+  margin: 140px 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.4em;
+  color: #888;
 }
 
 .divider {
