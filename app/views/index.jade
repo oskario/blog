@@ -6,66 +6,81 @@ block content
         .divider
         h2 Latest posts
 
-    .card
-        .top
-            .title
-                h2 Some example article
-            .tags
-                i.fa.fa-bolt
-            .date Posted on 13 Oct 2014
-        //img(src='http://lorempixel.com/640/300/abstract')
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-        //.divider
-        .bottom
-            .btn READ MORE
+    each post, index in posts
+        .card
+            if post.image
+                img(src=post.image)
+            .top
+                .title
+                    h2= post.title
+                .tags
+                    i.fa.fa-bolt
+                .date= post.date
+            p= post.description
+            .bottom
+                a.btn(href='post/' + post.permalink) READ MORE
 
-    .card
-        img(src='http://lorempixel.com/640/300/abstract')
-        .top
-            .title
-                h2 Another example article
-            .tags
-                i.fa.fa-line-chart
-            .date Posted on 8 Oct 2014
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-        .bottom
-            .btn READ MORE
-
-    .card
-        .top
-            .title
-                h2 Breaking news!
-            .tags
-                i.fa.fa-newspaper-o
-            .date Posted on 2 Oct 2014
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-        //.divider
-        .bottom
-            .btn READ MORE
-
-    .card
-        img(src='http://lorempixel.com/640/299/abstract')
-        .top
-            .title
-                h2 Just a casual story
-            .tags
-                i.fa.fa-pie-chart
-                i.fa.fa-anchor
-            .date Posted on 29 Sep 2014
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-        .bottom
-            .btn READ MORE
-
-    .card
-        img(src='http://lorempixel.com/640/301/abstract')
-        .top
-            .title
-                h2 Nothing really important
-            .date Posted on 23 Sep 2014
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-        .bottom
-            .btn READ MORE
-
+    //
+    //.card
+    //    .top
+    //        .title
+    //            h2 Some example article
+    //        .tags
+    //            i.fa.fa-bolt
+    //        .date Posted on 13 Oct 2014
+    //    //img(src='http://lorempixel.com/640/300/abstract')
+    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+    //    //.divider
+    //    .bottom
+    //        .btn READ MORE
+    //
+    //.card
+    //    img(src='http://lorempixel.com/640/300/abstract')
+    //    .top
+    //        .title
+    //            h2 Another example article
+    //        .tags
+    //            i.fa.fa-line-chart
+    //        .date Posted on 8 Oct 2014
+    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+    //    .bottom
+    //        .btn READ MORE
+    //
+    //.card
+    //    .top
+    //        .title
+    //            h2 Breaking news!
+    //        .tags
+    //            i.fa.fa-newspaper-o
+    //        .date Posted on 2 Oct 2014
+    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+    //    //.divider
+    //    .bottom
+    //        .btn READ MORE
+    //
+    //.card
+    //    img(src='http://lorempixel.com/640/299/abstract')
+    //    .top
+    //        .title
+    //            h2 Just a casual story
+    //        .tags
+    //            i.fa.fa-pie-chart
+    //            i.fa.fa-anchor
+    //        .date Posted on 29 Sep 2014
+    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+    //    .bottom
+    //        .btn READ MORE
+    //
+    //.card
+    //    img(src='http://lorempixel.com/640/301/abstract')
+    //    .top
+    //        .title
+    //            h2 Nothing really important
+    //        .date Posted on 23 Sep 2014
+    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
+    //    .bottom
+    //        .btn READ MORE
+    //
 
 
 

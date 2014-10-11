@@ -1,27 +1,13 @@
 extends layout
 
 block content
-    .card
-        img(src='http://lorempixel.com/640/300/abstract')
+    .card.post
         .top
-            .title
-                h2 Some example article
-            .tags
-                i.fa.fa-bolt
-            .date Posted on 13 Oct 2014
-        //img(src='http://lorempixel.com/640/300/abstract')
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-        p Donec nec elit at sem sagittis dictum non vitae ipsum. Maecenas fringilla id magna vitae scelerisque. Aliquam erat volutpat. Ut finibus massa aliquam, blandit tellus vel, ultricies erat. Mauris nisi augue, varius ut arcu sit amet, sagittis tristique leo. Donec ac elementum urna. Sed placerat, mauris eu blandit vestibulum, lacus mi semper enim, nec sodales nisi orci non dolor. Duis a libero iaculis magna tincidunt varius. Cras enim nisi, consequat nec erat ut, hendrerit cursus odio. Integer congue, tellus sit amet auctor congue, sem nibh pharetra elit, in rutrum felis eros quis ipsum.
-        p Sed odio nibh, interdum vitae turpis vel, rhoncus dignissim sapien. Nunc quis urna odio. In in molestie augue. Vivamus vel tortor eget turpis mattis ultrices. Cras vehicula, felis ut ullamcorper ultricies, orci nisi fermentum lacus, nec rhoncus felis arcu vel tellus. Nulla ornare nisi nec diam congue posuere. In rutrum aliquet efficitur. Fusce venenatis elementum lectus.
-        p Vivamus posuere facilisis suscipit. Nunc volutpat purus et dolor tristique, eget scelerisque ipsum tempor. Nullam consectetur nunc eu rutrum lacinia. Donec quis neque sed ipsum posuere scelerisque placerat porttitor lacus. Nullam vel nunc auctor risus fringilla vehicula ut vel metus. Donec placerat justo eget quam aliquet tristique. Aliquam erat volutpat. Vivamus in sem a leo posuere laoreet. Praesent finibus massa felis, sed pellentesque ligula finibus vitae. Donec non diam ac felis sodales euismod vitae non nisi. Integer a faucibus leo, eget pretium mi. Curabitur malesuada, orci tristique fringilla scelerisque, augue nulla vulputate purus, at imperdiet eros augue non enim. Donec consequat sagittis metus. Nam auctor, dui eget convallis porta, quam ex congue nunc, id accumsan felis odio sit amet lorem. Ut dapibus velit tellus, a sagittis nunc tincidunt sed.
-
-        img(src='http://lorempixel.com/640/301/abstract', style='margin-top:30px;margin-bottom:30px;')
-
-        p Sed placerat ante nisl. Aenean efficitur metus eu sem ornare cursus. Cras sodales commodo ipsum, et dignissim nulla efficitur vel. Nam sed laoreet urna. Nulla id sollicitudin dolor. Cras molestie blandit orci, non consequat velit ultricies sed. Maecenas vitae lectus sit amet est ultrices venenatis varius quis quam. Fusce lectus enim, efficitur tempor ipsum quis, auctor pharetra est. Nam ac tristique arcu, vitae elementum orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Phasellus vulputate dolor iaculis, imperdiet tellus at, vehicula arcu.
-        p Donec nec elit at sem sagittis dictum non vitae ipsum. Maecenas fringilla id magna vitae scelerisque. Aliquam erat volutpat. Ut finibus massa aliquam, blandit tellus vel, ultricies erat. Mauris nisi augue, varius ut arcu sit amet, sagittis tristique leo. Donec ac elementum urna. Sed placerat, mauris eu blandit vestibulum, lacus mi semper enim, nec sodales nisi orci non dolor. Duis a libero iaculis magna tincidunt varius. Cras enim nisi, consequat nec erat ut, hendrerit cursus odio. Integer congue, tellus sit amet auctor congue, sem nibh pharetra elit, in rutrum felis eros quis ipsum.
-        //.divider
-
-
-
-        //.bottom
-        //    .btn READ MORE
+            img(src=post.image)
+            .bar
+                .title
+                    h2= post.title
+                .date= post.date
+        p
+            strong= post.description
+        | !{post.body}
