@@ -9,6 +9,11 @@ var compress = require('compression');
 var methodOverride = require('method-override');
 
 module.exports = function (app, config) {
+    // Populate sample data
+    if (config.debug) {
+        require('./dummyData');
+    }
+
     app.set('views', config.root + '/app/views');
     app.set('view engine', 'jade');
 
