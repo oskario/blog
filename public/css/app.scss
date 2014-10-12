@@ -27,7 +27,7 @@ body {
   background-color: $color-main;
   z-index: 10000;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-//  height: 40px;
+  height: 50px;
   min-height: 50px;
   padding: 5px 0;
   border-radius: 0;
@@ -48,11 +48,15 @@ body {
       }
     }
   }
+}
 
-  a.logo, a.logo:hover, a.logo:visited {
-    text-decoration: none;
-    color: #fff;
-  }
+a.logo, a.logo:hover, a.logo:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-logo {
+  margin-top: 10px;
 }
 
 .bottom-bg-bar {
@@ -71,11 +75,10 @@ body {
 .go-up {
   position: absolute;
   bottom: 60px;
-
 }
 
 .content {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .card {

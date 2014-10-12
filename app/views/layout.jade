@@ -28,7 +28,7 @@ html(lang='en')
     body
         .top-bg-bar
 
-        .navbar.top-bar
+        .navbar.navbar-fixed-top.top-bar
             .container
                 .row
                     .col-md-8.col-md-offset-2.col-xs-10.col-xs-offset-1
@@ -41,6 +41,11 @@ html(lang='en')
 
 
         .container
+            //.row
+            //    .header-logo.col-md-8.col-md-offset-2.col-xs-10.col-xs-offset-1
+            //        a.logo.pull-left(href='/')
+            //            strong OD&nbsp;
+            //            | odylewski.com
             .row
                 .content.col-md-8.col-md-offset-2.col-xs-10.col-xs-offset-1
                     block content
@@ -59,6 +64,11 @@ html(lang='en')
         script(src='../../public/components/lodash/dist/lodash.compat.js')
         script(src='../../public/components/jquery.scrollTo/jquery.scrollTo.js')
         script(src='../../public/components/movejs/index.js')
+        script(src='../../public/components/bootstrap-autohidingnavbar/src/jquery.bootstrap-autohidingnavbar.js')
+        script(src='../../public/components/toccajs/index.js')
+        script(src='../../public/components/jasmine-jquery/lib/jasmine-jquery.js')
+        script(src='../../public/components/scroll-up-bar/dist/scroll-up-bar.min.js')
+        script(src='../../public/components/jquery.scrollmagic/index.js')
         //endbower
         script(src='/js/average-color.js')
         script(src='/js/app.js')

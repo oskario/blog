@@ -8,7 +8,8 @@ var config = {
         app: {
             name: 'blog'
         },
-        ip: 'localhost',
+//        ip: 'localhost',
+        ip: '192.168.0.12',
         port: 9000,
         db: 'mongodb://localhost/blog',
         debug: true
