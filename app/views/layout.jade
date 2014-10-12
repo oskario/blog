@@ -12,6 +12,7 @@ html(lang='en')
 
             //-<!-- build:css public/css/styles.min.css -->
             link(rel='stylesheet', href='/css/app.css')
+            link(rel='stylesheet', href='/css/post.css')
             link(rel='stylesheet', href='/css/fonts.css')
             //-<!-- endbuild -->
         block js
@@ -19,6 +20,7 @@ html(lang='en')
             //-<!-- endbuild -->
             script(src='http://localhost:35729/livereload.js')
             //script(src="components/platform/platform.js")
+            script(src="/libs/toccajs/Tocca.min.js")
 
         //block elements
         //    link(rel="import", href="components/paper-button/paper-button.html")
@@ -30,7 +32,7 @@ html(lang='en')
             .container
                 .row
                     .col-md-8.col-md-offset-2.col-xs-10.col-xs-offset-1
-                        .logo.pull-left
+                        a.logo.pull-left(href='/')
                             strong OD&nbsp;
                             | odylewski.com
                         .tools.pull-right
@@ -55,6 +57,8 @@ html(lang='en')
         script(src='../../public/components/jquery/dist/jquery.js')
         script(src='../../public/components/bootstrap/dist/js/bootstrap.js')
         script(src='../../public/components/lodash/dist/lodash.compat.js')
+        script(src='../../public/components/jquery.scrollTo/jquery.scrollTo.js')
+        script(src='../../public/components/movejs/index.js')
         //endbower
         script(src='/js/average-color.js')
         script(src='/js/app.js')

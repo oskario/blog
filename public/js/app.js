@@ -1,8 +1,30 @@
 'use strict';
 
 $(document).ready(function () {
+    move('body')
+        .set('opacity', 1)
+        .duration('0.3s')
+        .end();
+
     setTopBarColor();
+    $('body').on('swiperight', onBodySwipeLeft);
 });
+
+function onBodySwipeLeft () {
+    if(window.location.href.indexOf('post') !== -1) {
+        move('body')
+            .add('margin-left', 200)
+            .set('opacity', 0)
+            .duration('0.3s')
+            .then(function () {
+                window.history.back();
+            })
+            .end();
+    } else {
+        // scroll to top
+        $('body').scrollTo(0, 400);
+    }
+}
 
 function setTopBarColor() {
 //    var colorThief = new ColorThief();

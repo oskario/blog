@@ -29,6 +29,20 @@ Post.find({}).remove(function() {
         body: "<p>Duis euismod mi felis, nec venenatis ante hendrerit et. Nam pretium nibh ac dolor interdum, quis feugiat libero rutrum. Sed pellentesque urna nulla, et accumsan tellus gravida a. Donec facilisis ornare erat eget viverra. Morbi efficitur tincidunt purus rhoncus hendrerit. Suspendisse congue, lorem dignissim pulvinar elementum, sem odio semper dui, elementum dignissim justo sapien et dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo arcu, dictum ut pellentesque et, laoreet vitae risus. Aenean vel tristique tellus, nec porta libero.</p>",
         image: "http://lorempixel.com/641/300/abstract"
     },{
+        title: "Some example article #3",
+        description: "Donec nec elit at sem sagittis dictum non vitae ipsum. Maecenas fringilla id magna vitae scelerisque. Aliquam erat volutpat. Ut finibus massa aliquam, blandit tellus vel, ultricies erat.",
+        author: "Bob the cat",
+        tags: ["car", "tricks"],
+        body: "<p>Duis euismod mi felis, nec venenatis ante hendrerit et. Nam pretium nibh ac dolor interdum, quis feugiat libero rutrum. Sed pellentesque urna nulla, et accumsan tellus gravida a. Donec facilisis ornare erat eget viverra. Morbi efficitur tincidunt purus rhoncus hendrerit. Suspendisse congue, lorem dignissim pulvinar elementum, sem odio semper dui, elementum dignissim justo sapien et dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo arcu, dictum ut pellentesque et, laoreet vitae risus. Aenean vel tristique tellus, nec porta libero.</p>",
+        image: "http://lorempixel.com/641/299/abstract"
+    },{
+        title: "Some example article #4",
+        description: "Donec nec elit at sem sagittis dictum non vitae ipsum. Maecenas fringilla id.",
+        author: "Bob the cat",
+        tags: ["car", "tricks"],
+        body: "<p>Duis euismod mi felis, nec venenatis ante hendrerit et. Nam pretium nibh ac dolor interdum, quis feugiat libero rutrum. Sed pellentesque urna nulla, et accumsan tellus gravida a. Donec facilisis ornare erat eget viverra. Morbi efficitur tincidunt purus rhoncus hendrerit. Suspendisse congue, lorem dignissim pulvinar elementum, sem odio semper dui, elementum dignissim justo sapien et dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo arcu, dictum ut pellentesque et, laoreet vitae risus. Aenean vel tristique tellus, nec porta libero.</p>",
+        image: "http://lorempixel.com/639/301/abstract"
+    },{
         title: "This is yet another post",
         subtitle: "Mauris nisi augue, varius ut arcu sit amet, sagittis tristique leo. Donec ac elementum urna. Sed placerat, mauris eu blandit vestibulum, lacus mi semper enim, nec sodales nisi orci non dolor. Duis a libero iaculis magna tincidunt varius. Cras enim nisi, consequat nec erat ut, hendrerit cursus odio.",
         author: "Nobody",

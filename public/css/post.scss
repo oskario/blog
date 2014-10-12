@@ -1,0 +1,48 @@
+@import 'config.scss';
+
+.card.post {
+  .top {
+    margin: 0 0 30px 0;
+    position: relative;
+
+    img {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 12px 0 12px 20px;
+
+      .title h2 {
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 5px;
+      }
+
+      .date {
+        color: #ccc;
+      }
+    }
+  }
+
+  > img {
+    margin: 20px 0;
+  }
+
+  > h2 {
+    width: 100%;
+    margin: 50px 0 15px 0;
+    padding: 25px 0 15px 15px;
+    background-color: $color-main;
+    color: #fff;
+    font-size: 1.7em;
+    font-weight: 300;
+  }
+}
