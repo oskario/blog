@@ -2,6 +2,7 @@ extends layout
 
 block content
     .header.card
+        img(src="http://lorempixel.com/638/300/abstract")
         h2 Featured posts
         .divider
         h2 Latest posts
@@ -18,79 +19,16 @@ block content
                 .date= post.date
             p= post.description
             .bottom
+                //paper-button.hover= "READ MORE"
                 a.btn(href='post/' + post.permalink) READ MORE
 
     .info
         p Wow, you've reached this far, congratulations!
         p But still, bad news. There are no posts left.
         p &nbsp;
-        p Maybe you would like to contact me and suggest an article?
+        p Maybe you would like to contact me and suggest one?
         .btn
             i.fa.fa-envelope.fa-5x
-
-    //
-    //.card
-    //    .top
-    //        .title
-    //            h2 Some example article
-    //        .tags
-    //            i.fa.fa-bolt
-    //        .date Posted on 13 Oct 2014
-    //    //img(src='http://lorempixel.com/640/300/abstract')
-    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-    //    //.divider
-    //    .bottom
-    //        .btn READ MORE
-    //
-    //.card
-    //    img(src='http://lorempixel.com/640/300/abstract')
-    //    .top
-    //        .title
-    //            h2 Another example article
-    //        .tags
-    //            i.fa.fa-line-chart
-    //        .date Posted on 8 Oct 2014
-    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-    //    .bottom
-    //        .btn READ MORE
-    //
-    //.card
-    //    .top
-    //        .title
-    //            h2 Breaking news!
-    //        .tags
-    //            i.fa.fa-newspaper-o
-    //        .date Posted on 2 Oct 2014
-    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-    //    //.divider
-    //    .bottom
-    //        .btn READ MORE
-    //
-    //.card
-    //    img(src='http://lorempixel.com/640/299/abstract')
-    //    .top
-    //        .title
-    //            h2 Just a casual story
-    //        .tags
-    //            i.fa.fa-pie-chart
-    //            i.fa.fa-anchor
-    //        .date Posted on 29 Sep 2014
-    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-    //    .bottom
-    //        .btn READ MORE
-    //
-    //.card
-    //    img(src='http://lorempixel.com/640/301/abstract')
-    //    .top
-    //        .title
-    //            h2 Nothing really important
-    //        .date Posted on 23 Sep 2014
-    //    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec magna velit, volutpat a ullamcorper non, mattis ut libero. Maecenas id dolor leo. Nulla at arcu sed ipsum volutpat pharetra in in velit. Vestibulum a volutpat ante. Curabitur posuere felis et diam dictum congue. Maecenas aliquam, lacus fringilla scelerisque mollis, purus odio ultricies tortor, sit amet dignissim mi tellus eleifend urna. Sed vehicula tempor nisi sed vulputate.
-    //    .bottom
-    //        .btn READ MORE
-    //
-
-
 
     //.jumbotron
     //    h1 Navbar example
