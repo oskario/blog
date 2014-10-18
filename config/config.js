@@ -9,7 +9,7 @@ var config = {
             name: 'blog'
         },
 //        ip: 'localhost',
-        ip: '192.168.0.12',
+        // ip: '192.168.0.12',
         port: 9000,
         db: 'mongodb://localhost/blog',
         debug: true

@@ -17,14 +17,16 @@ body {
   left: 0;
   right: 0;
   height: 300px;
-  background-color: $color-main;
+  background: url('/public/img/blue2.svg');
+  background-size: cover;
   z-index: -1000;
 }
 
 .top-bar {
   position: fixed;
   width: 100%;
-  background-color: $color-main;
+  background: url('/public/img/blue2.svg');
+  background-size: cover;
   z-index: 10000;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   height: 50px;
@@ -52,7 +54,7 @@ body {
 
 a.logo, a.logo:hover, a.logo:visited {
   text-decoration: none;
-  color: #fff;
+  color: $color-title;
 }
 
 .header-logo {
@@ -65,11 +67,12 @@ a.logo, a.logo:hover, a.logo:visited {
   left: 0;
   right: 0;
   height: 60px;
-  background-color: $color-main;
+  background: url('/public/img/blue2.svg');
+  background-size: cover;
   z-index: -1000;
   text-align: center;
   padding: 25px;
-  color: #fff;
+  color: $color-title;
 }
 
 .go-up {
@@ -84,12 +87,12 @@ a.logo, a.logo:hover, a.logo:visited {
 .card {
   display: block;
   box-sizing: border-box;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
   border-radius: 2px;
-  border-style: 1px solid rgba(0,0,0,.26);
+  border-style: 1px solid rgba(0,0,0,.5);
   overflow: hidden;
   background-color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 0;
 
   &>* {

@@ -2,7 +2,7 @@ extends layout
 
 block content
     .header.card
-        img(src="http://lorempixel.com/638/300/abstract")
+        img(src="http://lorempixel.com/638/300")
         h2 Featured posts
         .divider
         h2 Latest posts
@@ -19,7 +19,6 @@ block content
                 .date= post.date
             p= post.description
             .bottom
-                //paper-button.hover= "READ MORE"
                 a.btn(href='post/' + post.permalink) READ MORE
 
     .info
