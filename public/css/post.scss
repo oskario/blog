@@ -89,7 +89,7 @@
 
   .more {
     position: absolute;
-    top: 80px;
+    top: 70px;
     width: 30px;
     height: 60px;
     line-height: 60px;
@@ -97,8 +97,6 @@
     font-size: 30px;
     background-color: #fff;
     text-align: center;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
     cursor: pointer;
     z-index: 5;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
@@ -111,10 +109,14 @@
 
     &.right {
       right: 0;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
     }
 
     &.left {
       left: 0;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
     }
   }
 
@@ -132,6 +134,7 @@
   .entries {
     left: 15px;
     top: 56px;
+    height: 140px;
     position: absolute;
     white-space: nowrap;
     overflow: hidden;
@@ -143,18 +146,32 @@
 
     .entry {
       width: 180px;
-      height: 180px;
+//      height: 180px;
       list-style: none;
       display: inline-block;
       margin-right: 15px;
+      box-shadow: none;
 
-      h3 {
-        margin-top: 7px;
-        font-size: 1.1em;
+      a {
+        display: block;
+        text-decoration: none;
+
+        h3 {
+          margin: 7px 0 4px 5px;
+          font-size: 1.1em;
+        }
+
+        .date {
+          margin-left: 5px;
+          margin-bottom: 5px;
+          font-size: 0.8em;
+          color: #aaa;
+        }
       }
 
-      .date {
-        font-size: 0.8em;
+      &:hover {
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+        transition: box-shadow 0.25s;
       }
     }
   }

@@ -1,6 +1,8 @@
 'use strict';
 
 $(document).ready(function () {
+    parseDates();
+
     // Fade whole page in
     fadeIn('body');
 
@@ -15,7 +17,15 @@ $(document).ready(function () {
 
     $(".also-like .right").click(onAlsoLikeRight);
     $(".also-like .left").click(onAlsoLikeLeft);
+    $(".also-like .entry").click(onAlsoLikeEntryClick);
 });
+
+function parseDates () {
+    $('.date').each(function () {
+        var newDate = moment($(this).html()).format("dddd, MMMM Do YYYY");
+        $(this).html(newDate);
+    });
+}
 
 function fadeIn (element) {
     move(element)
@@ -108,16 +118,41 @@ function onBodySwipeLeft () {
     }
 }
 
-function onAlsoLikeRight() {
+function calcAlsoLikeOffset (left) {
+    var viewportWidth = $('.also-like').width();
+    var current = parseInt($('.also-like .entries').css('left'));
+    var width = $('.also-like .entries .entry').width() + 15;
+    var count = $('.also-like .entries .entry').size();
+    var offset = parseInt(viewportWidth / width) * width;
+    var max = 15;
+    var min = -(count * width - viewportWidth);
+    var newOffset = left ? (current + offset) : (current - offset);
+
+    if (newOffset < min) {
+        return min - current;
+    } else if (newOffset > max) {
+        return max - current;
+    } else {
+        return newOffset - current;
+    }
+}
+
+function onAlsoLikeRight () {
     move('.also-like .entries')
-        .sub('left', 180*2)
+        .add('left', calcAlsoLikeOffset(false))
         .duration('0.4s')
         .end();
 }
 
-function onAlsoLikeLeft() {
+function onAlsoLikeLeft () {
     move('.also-like .entries')
-        .add('left', 180*2)
+        .add('left', calcAlsoLikeOffset(true))
         .duration('0.4s')
         .end();
+}
+
+function onAlsoLikeEntryClick () {
+//    move($(this))
+//        .set('opacity', 0)
+//        .end();
 }

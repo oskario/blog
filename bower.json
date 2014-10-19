@@ -15,6 +15,7 @@
     "bootstrap-autohidingnavbar": "~1.0.0",
     "toccajs": "https://raw.githubusercontent.com/GianlucaGuarini/Tocca.js/master/Tocca.min.js",
     "scroll-up-bar": "~0.3.0",
-    "jquery.scrollmagic": "https://raw.githubusercontent.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.min.js"
+    "jquery.scrollmagic": "https://raw.githubusercontent.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.min.js",
+    "moment": "~2.8.3"
   }
 }

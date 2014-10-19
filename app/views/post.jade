@@ -21,7 +21,8 @@ block bottom
             .entries
                 each similar, index in post.similar
                     li.entry
-                        img(src=similar.image)
-                        h3= similar.title
-                        .date= similar.date
+                        a(href='/post/' + similar.permalink)
+                            img(src=similar.image)
+                            h3= similar.title
+                            .date= similar.date
                         //a.btn(href='/post/' + similar.permalink) READ MORE
