@@ -13,5 +13,15 @@ block content
         | !{post.body}
 
 block bottom
-    .card
-        p You may also like
+    .card.also-like
+        .title Have a look at one of these
+        .more.right >
+        .more.left <
+        ul
+            .entries
+                each similar, index in post.similar
+                    li.entry
+                        img(src=similar.image)
+                        h3= similar.title
+                        .date= similar.date
+                        //a.btn(href='/post/' + similar.permalink) READ MORE

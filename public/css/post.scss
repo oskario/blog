@@ -80,3 +80,82 @@
     }
   }
 }
+
+.also-like {
+  margin-bottom: 40px;
+  width: 100%;
+  position: relative;
+  height: 200px;
+
+  .more {
+    position: absolute;
+    top: 80px;
+    width: 30px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0;
+    font-size: 30px;
+    background-color: #fff;
+    text-align: center;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+    transition: width 0.2s;
+    transition-timing-function: cubic-bezier(0.25,0.25,0.325,1.39);
+
+    &:hover {
+      width: 50px;
+    }
+
+    &.right {
+      right: 0;
+    }
+
+    &.left {
+      left: 0;
+    }
+  }
+
+  .title {
+    width: 100%;
+    margin: 0px 0 15px 0;
+    padding: 7px;
+    background-color: #8c80b2;
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 300;
+    padding-left: 20px;
+  }
+
+  .entries {
+    left: 15px;
+    top: 56px;
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  ul {
+    display: inline-block;
+    margin-left: 15px;
+
+    .entry {
+      width: 180px;
+      height: 180px;
+      list-style: none;
+      display: inline-block;
+      margin-right: 15px;
+
+      h3 {
+        margin-top: 7px;
+        font-size: 1.1em;
+      }
+
+      .date {
+        font-size: 0.8em;
+      }
+    }
+  }
+}

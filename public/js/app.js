@@ -11,7 +11,10 @@ $(document).ready(function () {
     onWindowScroll();
 
     // Install go back on swipe
-    $('body').on('swiperight', onBodySwipeLeft);
+//    $('body').on('swiperight', onBodySwipeLeft);
+
+    $(".also-like .right").click(onAlsoLikeRight);
+    $(".also-like .left").click(onAlsoLikeLeft);
 });
 
 function fadeIn (element) {
@@ -62,8 +65,6 @@ function onWindowScroll () {
     if (scrollVector < 0) {
         moveOffset = Math.max(scrollVector, 0);
     }
-    console.log("Scroll vector: " + scrollVector + " move offset: " + moveOffset);
-
 
     var duration = '0s';
     if (Math.abs(moveOffset) === showHideOffset || moveOffset === 0) {
@@ -105,4 +106,18 @@ function onBodySwipeLeft () {
         // scroll to top
         $('body').scrollTo(0, 400);
     }
+}
+
+function onAlsoLikeRight() {
+    move('.also-like .entries')
+        .sub('left', 180*2)
+        .duration('0.4s')
+        .end();
+}
+
+function onAlsoLikeLeft() {
+    move('.also-like .entries')
+        .add('left', 180*2)
+        .duration('0.4s')
+        .end();
 }

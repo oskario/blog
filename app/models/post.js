@@ -10,6 +10,7 @@ var PostSchema = new Schema({
     tags: [String],
     date: { type: Date, default: Date.now },
     permalink: String,
+    similar: [Schema.Types.ObjectId],
     image: String,
     body: String
 });
@@ -20,6 +21,5 @@ PostSchema.pre('save', function (next) {
     }
     next();
 });
-
 
 module.exports = mongoose.model('Post', PostSchema);

@@ -4,7 +4,9 @@
 
 'use strict';
 
-var Post = require('../app/models/post.js');
+var mongoose = require('mongoose'),
+    ObjectId = mongoose.Types.ObjectId,
+    Post = require('../app/models/post.js');
 
 Post.find({}).remove(function() {
     Post.create({
@@ -20,8 +22,10 @@ Post.find({}).remove(function() {
               '<img src="http://lorempixel.com/640/301" />' +
               '<p>Sed <a href="#">placerat</a> ante nisl. Aenean efficitur metus eu sem ornare cursus. Cras sodales commodo ipsum, et dignissim nulla efficitur vel. Nam sed laoreet urna. Nulla id sollicitudin dolor. Cras molestie blandit orci, non consequat velit ultricies sed. Maecenas vitae lectus sit amet est ultrices venenatis varius quis quam. Fusce lectus enim, efficitur tempor ipsum quis, auctor pharetra est. Nam ac tristique arcu, vitae elementum orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Phasellus vulputate dolor iaculis, imperdiet tellus at, vehicula arcu.</p>' +
               '<p>Donec nec elit at sem sagittis dictum non vitae ipsum. Maecenas fringilla id magna vitae scelerisque. Aliquam erat volutpat. Ut finibus massa aliquam, blandit tellus vel, ultricies erat. Mauris nisi augue, varius ut arcu sit amet, sagittis tristique leo. Donec ac elementum urna. Sed placerat, mauris eu blandit vestibulum, lacus mi semper enim, nec sodales nisi orci non dolor. Duis a libero iaculis magna tincidunt varius. Cras enim nisi, consequat nec erat ut, hendrerit cursus odio. Integer congue, tellus sit amet auctor congue, sem nibh pharetra elit, in rutrum felis eros quis ipsum.</p>',
-        image: "http://lorempixel.com/640/300"
+        image: "http://lorempixel.com/640/300",
+        similar: [ObjectId('4edd40c86762e0fb12000003')]
     },{
+        _id: ObjectId('4edd40c86762e0fb12000003'),
         title: "Some example article",
         description: "Donec nec elit at sem sagittis dictum non vitae ipsum. Maecenas fringilla id magna vitae scelerisque. Aliquam erat volutpat. Ut finibus massa aliquam, blandit tellus vel, ultricies erat.",
         author: "Bob the cat",
